@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Project</title>
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/game.css">
+<link rel="stylesheet" href="assets/css/animation.css">
+</head>
+<body> 
+<!-- loading 页面 -->
+<div id="loading" class="hide">
+	<div id="loadPer">loading...1%</div>
+</div>
+<div class="game-wall">
+	<!-- 第一页 -->
+	<div class="container1">
+		<!-- 全屏背景放这里 -->
+		<!-- <div class="bg"><img src="assets/images/page1_bg.png"></div> -->
+		<div class="pagination">
+			<!-- 中间内容区域 -->
+            
+		</div>
+	</div>
+
+	<!-- 第二页 -->
+	<div class="container2 hide">
+		<div class="pagination">
+			
+		</div>
+	</div>
+
+</div>
+<!-- 微信分享调用 -->
+<!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+<script src="assets/js/zepto.min.js"></script>
+<script src="assets/js/screen.js"></script>
+<script>
+//微信分享调用配置微信  jssdk  后端配置
+    // wx.config({
+    //     // debug: true,
+    //     appId: '<?= $js_sign['appId']; ?>',    //后端传送
+    //     timestamp: <?= $js_sign['timestamp']; ?>,
+    //     nonceStr: '<?= $js_sign['nonceStr']; ?>',
+    //     signature: '<?= $js_sign['signature']; ?>',
+    //     jsApiList: [
+    //         'onMenuShareTimeline',
+    //         'onMenuShareAppMessage',
+    //         'onMenuShareQQ',
+    //         'onMenuShareWeibo',
+    //         'chooseImage',
+    //         'uploadImage'
+    //     ]
+    // });
+
+
+var screenScale = new screen({
+    width:640,
+    height:960,	
+    object:'.pagination',
+    standard:'orientation',//orientation:横向，vertical:纵向)
+    alignment:'center',
+    success:function(){
+        $(".pagination").show();//确保加载成功以后再把内容区显示
+    }
+});
+</script>
+<script src="assets/js/game.js"></script>
+</body>
+</html>
